@@ -12,7 +12,6 @@ import sys
 import signal
 import time
 import webbrowser
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Optional, Set
 import requests
@@ -20,7 +19,6 @@ import psutil
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, Request
 from fastapi.responses import HTMLResponse, FileResponse
-from fastapi.staticfiles import StaticFiles
 import uvicorn
 
 class DataCapTesterServer:

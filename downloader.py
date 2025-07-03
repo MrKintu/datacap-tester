@@ -12,7 +12,7 @@ import sys
 import argparse
 import logging
 from datetime import datetime, timezone, timedelta
-from typing import List, Dict, Optional
+from typing import Dict
 from pathlib import Path
 import httpx
 import statistics
