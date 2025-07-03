@@ -48,6 +48,7 @@
         
         .glass-card {
             background: rgba(255, 255, 255, 0.08);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
@@ -58,6 +59,7 @@
         
         .metric-card {
             background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255,255,255,0.15);
             transition: all 0.3s ease;
@@ -71,6 +73,7 @@
         
         .control-button {
             background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             transition: all 0.3s ease;
@@ -152,6 +155,7 @@
         
         /* Modal Animations */
         .modal-backdrop {
+            -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
             transition: all 0.3s ease;
         }
@@ -739,16 +743,24 @@
                     <button onclick="toggleAutoScroll()" id="autoScrollBtn" class="text-xs bg-slate-600 hover:bg-slate-700 text-white px-3 py-1 rounded-lg transition-colors duration-300">
                         Auto-scroll: ON
                     </button>
-                    <button onclick="refreshLogs()" class="text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg transition-colors duration-300 flex items-center">
+                    <button type="button" onclick="refreshLogs()" class="text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg transition-colors duration-300 flex items-center">
                         <i data-lucide="refresh-cw" class="w-3 h-3 mr-1"></i>
                         Refresh
                     </button>
-                    <button onclick="clearLogs()" class="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-lg transition-colors duration-300 flex items-center">
+                    <button type="button" onclick="clearLogs()" class="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-lg transition-colors duration-300 flex items-center">
                         <i data-lucide="trash-2" class="w-3 h-3 mr-1"></i>
                         Clear
                     </button>
-                    <button onclick="toggleLogs()" id="logsToggleBtn" class="text-xs bg-slate-600 hover:bg-slate-700 text-white px-3 py-1 rounded-lg transition-colors duration-300">
+                    <button 
+                        type="button" 
+                        onclick="toggleLogs()" 
+                        id="logsToggleBtn" 
+                        class="text-xs bg-slate-600 hover:bg-slate-700 text-white px-3 py-1 rounded-lg transition-colors duration-300 flex items-center"
+                        aria-label="Toggle logs visibility"
+                        title="Toggle logs visibility"
+                    >
                         <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                        <span class="sr-only">Toggle logs</span>
                     </button>
                 </div>
             </div>
@@ -1514,7 +1526,7 @@
                             <span class="text-green-200">Average Speed:</span>
                             <span class="text-white font-mono">${avgSpeed.toFixed(1)} Mbps</span>
                         </div>
-                        <div class="bg-green-800 bg-opacity-40 rounded-lg p-2 mt-2">
+                        <div class="bg-green-900 bg-opacity-40 rounded-lg p-2 mt-2">
                             <div class="text-green-100 text-xs">
                                 <strong>Good News:</strong> No speed degradation detected despite exceeding your configured data cap. 
                                 Your ISP may not enforce this limit or may have different throttling thresholds.
@@ -1843,4 +1855,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
